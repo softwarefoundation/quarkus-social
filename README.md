@@ -8,6 +8,14 @@ Para iniciar execute o comando na raiz do projeto:
 ./gradlew quarkusDev
 ```
 
+# Documentações
+[Configurar Swagger na aplicação](https://quarkus.io/guides/openapi-swaggerui)
+
+[Swagger Localhost](http://localhost:8080/q/swagger-ui/#/)
+
+[Open API Json format](http://localhost:8080/q/openapi?format=json)
+
+
 # quarkus-social Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.

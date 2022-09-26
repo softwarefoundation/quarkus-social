@@ -20,6 +20,7 @@ dependencies {
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    implementation("io.quarkus:quarkus-smallrye-openapi")
 }
 
 group 'com.softwarefoundation'
