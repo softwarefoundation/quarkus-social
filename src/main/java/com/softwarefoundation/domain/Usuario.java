@@ -26,7 +26,7 @@ public class Usuario {
     @Column(name = "IDADE")
     private Integer idade;
 
-    @Column(name = "EMAIL", length = 50)
+    @Column(name = "EMAIL", length = 50, nullable = false)
     private String email;
 
 

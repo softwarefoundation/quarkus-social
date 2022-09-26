@@ -17,7 +17,7 @@ public class UsuarioService {
     public UsuarioService() {
         this.usuarioRepository = new UsuarioRepository();
     }
-    
+
     public void cadastrarUsuario(Usuario usuario) {
         this.usuarioRepository.persist(usuario);
     }

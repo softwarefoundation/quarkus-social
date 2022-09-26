@@ -1,13 +1,19 @@
 package com.softwarefoundation.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 //import lombok.Data;
 //
 //@Data
 public class UsuarioDTO {
 
     private Long id;
+    @NotBlank(message = "Nome é obrigatório")
     private String nome;
+    @NotNull(message = "Idade é obrigatório")
     private Integer idade;
+    @NotBlank(message = "E-mail é obrigatório")
     private String email;
 
     public UsuarioDTO() {
