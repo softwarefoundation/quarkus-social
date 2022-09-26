@@ -9,12 +9,16 @@ Para iniciar execute o comando na raiz do projeto:
 ```
 
 # Documentações
+
+##Swagger
 [Configurar Swagger na aplicação](https://quarkus.io/guides/openapi-swaggerui)
 
 [Swagger Localhost](http://localhost:8080/q/swagger-ui/#/)
 
 [Open API Json format](http://localhost:8080/q/openapi?format=json)
 
+##Lombok
+https://www.section.io/engineering-education/how-to-work-with-lombok-on-quarkus/
 
 # quarkus-social Project
 
