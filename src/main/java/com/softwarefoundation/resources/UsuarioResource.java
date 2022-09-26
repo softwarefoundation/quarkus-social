@@ -1,7 +1,10 @@
 package com.softwarefoundation.resources;
 
+import com.softwarefoundation.domain.Usuario;
 import com.softwarefoundation.dto.UsuarioDTO;
+import com.softwarefoundation.service.UsuarioService;
 
+import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -15,15 +18,21 @@ import javax.ws.rs.core.Response;
 @Produces(MediaType.APPLICATION_JSON)
 public class UsuarioResource {
 
+    private UsuarioService usuarioService;
+
     @POST
+    @Transactional
     public Response cadastrarUsuario(UsuarioDTO usuarioDTO){
-        System.out.println(usuarioDTO.getNome());
+        usuarioService = new UsuarioService();
+        Usuario usuario = Usuario.fromDTO(usuarioDTO);
+        usuarioService.cadastrarUsuario(usuario);
         return Response.ok().build();
     }
 
     @GET
     public Response listarUsuarios(){
-        return Response.ok().build();
+        usuarioService = new UsuarioService();
+        return Response.ok(usuarioService.listarUsuarios()).build();
     }
 
 }
