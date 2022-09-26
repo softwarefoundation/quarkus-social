@@ -1,3 +1,13 @@
+# Configurações
+```shell script
+JAVA_HOME = C:\Program Files\Java\jdk-11.0.12\
+```
+
+Para iniciar execute o comando na raiz do projeto:
+```shell script
+./gradlew quarkusDev
+```
+
 # quarkus-social Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
