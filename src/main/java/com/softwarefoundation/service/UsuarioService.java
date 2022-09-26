@@ -16,13 +16,20 @@ public class UsuarioService {
     }
 
     @Transactional
-    public void cadastrarUsuario(Usuario usuario){
+    public void cadastrarUsuario(Usuario usuario) {
         this.usuarioRepository.salvar(usuario);
     }
 
-    public List<Usuario> listarUsuarios(){
-        PanacheQuery<Usuario> query = Usuario.findAll();
-        return query.list();
+    public void atualizarUsuario(Usuario usuario){
+        usuarioRepository.atualizarUsuario(usuario);
+    }
+
+    public void excluirUsuario(Usuario usuario){
+        usuarioRepository.excluirUsuario(usuario);
+    }
+
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepository.listarUsuarios();
     }
 
 }

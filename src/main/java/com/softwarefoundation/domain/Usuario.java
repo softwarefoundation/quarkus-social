@@ -64,6 +64,7 @@ public class Usuario extends PanacheEntityBase {
 
     public static Usuario fromDTO(UsuarioDTO usuarioDTO){
         Usuario usuario = new Usuario();
+        usuario.id = usuarioDTO.getId();
         usuario.nome = usuarioDTO.getNome();
         usuario.idade = usuarioDTO.getIdade();
         usuario.email = usuarioDTO.getEmail();
