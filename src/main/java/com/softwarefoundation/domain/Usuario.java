@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Table(name = "TB01_USUARIO")
 @Entity
-public class Usuario extends PanacheEntityBase {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

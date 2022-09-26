@@ -3,22 +3,20 @@ package com.softwarefoundation.repository;
 import com.softwarefoundation.domain.Usuario;
 import com.softwarefoundation.exception.RegistroNaoLocalizadoException;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
 
-public class UsuarioRepository {
-
-    public void salvar(Usuario usuario) {
-        usuario.persist();
-    }
+@ApplicationScoped
+public class UsuarioRepository implements PanacheRepository<Usuario> {
 
     public List<Usuario> listarUsuarios() {
-        PanacheQuery<Usuario> query = Usuario.findAll();
-        return query.list();
+        return findAll().list();
     }
 
     public Usuario pesquisarPorId(Long id) {
-        return  (Usuario) Usuario.findByIdOptional(id).orElseThrow(() -> new RegistroNaoLocalizadoException("Usuário não localizado"));
+        return findByIdOptional(id).orElseThrow(() -> new RegistroNaoLocalizadoException("Usuário não localizado"));
     }
 
     public void atualizarUsuario(Usuario usuario) {
@@ -29,7 +27,7 @@ public class UsuarioRepository {
     }
 
     public void excluirUsuario(Usuario usuario) {
-        pesquisarPorId(usuario.getId()).delete();
+        delete(pesquisarPorId(usuario.getId()));
     }
 
 }
